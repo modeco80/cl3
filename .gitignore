@@ -1,0 +1,10 @@
+game/cl_dlls/*.so
+game/cl_dlls/*.dbg
+game/cl_dlls/*.dll
+
+game/dlls/*.so
+game/dlls/*.dbg
+game/dlls/*.dll
+
+# internal rehlds tree
+rehlds/**/*
