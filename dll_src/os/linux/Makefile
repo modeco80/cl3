@@ -11,7 +11,7 @@ ifeq "$(CFG)" ""
 CFG=release
 endif
 
-SOURCE_DIR=..
+SOURCE_DIR=../..
 BUILD_DIR=$(CFG)
 
 ENGINE_SRC_DIR=$(SOURCE_DIR)/engine

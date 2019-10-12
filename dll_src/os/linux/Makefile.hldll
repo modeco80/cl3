@@ -151,8 +151,8 @@ dirs:
 
 hl.$(SHLIBEXT): $(HLDLL_OBJS) $(HLWPN_OBJS) $(PM_OBJS) $(GAME_SHARED_OBJS)
 	$(CC) $(LDFLAGS) $(SHLIBLDFLAGS) -o $(BUILD_DIR)/$@ $(HLDLL_OBJS) $(HLWPN_OBJS) $(PM_OBJS) $(GAME_SHARED_OBJS)
-	cp $(BUILD_DIR)/$@  ../../cl3/dlls/hl.$(SHLIBEXT)
-	./gendbg.sh ../../cl3/dlls/hl.$(SHLIBEXT)
+	cp $(BUILD_DIR)/$@  $(SOURCE_DIR)/../cl3/dlls/hl.$(SHLIBEXT)
+	./gendbg.sh $(SOURCE_DIR)/../cl3/dlls/hl.$(SHLIBEXT)
 
 $(HLWPN_OBJ_DIR)/%.o : $(HLWPN_SRC_DIR)/%.cpp
 	$(DO_HLWPN_CC)

@@ -1,4 +1,4 @@
 # ignore various build artifacts
-linux/hl_cdll_map.txt
-linux/hl_map.txt
-linux/release/**
+os/linux/hl_cdll_map.txt
+os/linux/hl_map.txt
+os/linux/release/**
