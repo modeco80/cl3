@@ -1,10 +1,13 @@
 cl3/cl_dlls/*.so
 cl3/cl_dlls/*.dbg
 cl3/cl_dlls/*.dll
+cl3/cl_dlls/*.txt
 
 cl3/dlls/*.so
 cl3/dlls/*.dbg
 cl3/dlls/*.dll
+cl3/dlls/*.txt
 
-# internal rehlds tree
-rehlds/**/*
+dll_src/os/linux/release/**/*
+dll_src/os/linux/release/hl_map.txt
+dll_src/os/linux/release/hl_cdll_map.txt
