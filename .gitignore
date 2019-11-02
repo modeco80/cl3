@@ -9,5 +9,5 @@ cl3/dlls/*.dll
 cl3/dlls/*.txt
 
 dll_src/os/linux/release/**/*
-dll_src/os/linux/release/hl_map.txt
-dll_src/os/linux/release/hl_cdll_map.txt
+dll_src/os/linux/hl_map.txt
+dll_src/os/linux/hl_cdll_map.txt
