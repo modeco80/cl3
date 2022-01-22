@@ -26,6 +26,7 @@
 #include <stdio.h> // for safe_sprintf()
 #include <stdarg.h>  // "
 #include <string.h> // for strncpy()
+#include <algorithm>
 
 // Macros to hook function calls into the HUD object
 #define HOOK_MESSAGE(x) gEngfuncs.pfnHookUserMsg(#x, __MsgFunc_##x );
@@ -162,24 +163,32 @@ inline int safe_sprintf( char *dst, int len_dst, const char *format, ...)
 inline void PlaySound( char *szSound, float vol ) { gEngfuncs.pfnPlaySoundByName( szSound, vol ); }
 inline void PlaySound( int iSound, float vol ) { gEngfuncs.pfnPlaySoundByIndex( iSound, vol ); }
 
-// Inline implementations of
-// min() and max(), because the macros collide with STL <algorithm>'s
-// std::min() and std::max() which cause
-// the STL to freak out.
+// Use a inline template for max t
 
 #if !defined(max)
-inline int max(int a, int b) { 
-	return (((a) > (b)) ? (a) : (b)); 
-}  
+//inline int max(int a, int b) { 
+//	return (((a) > (b)) ? (a) : (b)); 
+//}  
+
+template<class T, class T2>
+inline const T& max(const T& a, const T2& b) {
+		return (((a) > (b)) ? (a) : (b)); 
+}
+
 #endif
 
 #if !defined(min)
-inline int min(int a, int b) { 
-	return (((a) < (b)) ? (a) : (b)); 
+//inline int min(int a, int b) { 
+//	return (((a) < (b)) ? (a) : (b)); 
+//}
+template<class T, class T2>
+inline const T& min(const T& a, const T2& b) {
+	return (((a) < (b)) ? (a) : (b));
 }
 #endif
 
-#define fabs(x)	   ((x) > 0 ? (x) : 0 - (x))
+// Commented out as this breaks c stdlib's abs(double) overload.
+//#define fabs(x)	   ((x) > 0 ? (x) : 0 - (x))
 
 void ScaleColors( int &r, int &g, int &b, int a );
 
